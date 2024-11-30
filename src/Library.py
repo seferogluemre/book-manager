@@ -18,7 +18,13 @@ class Kitap:
     def set_yazar(self,yeni_yazar):
         self._yazar=yeni_yazar
     def set_fiyat(self,yeni_fiyat):
-        self._fiyat=yeni_fiyat
+        if yeni_fiyat >0:
+            self._fiyat=yeni_fiyat
+        else :
+            print("Fiyat negatif Olamaz. Tekrar deneyiniz")
     
-    
+    # Polymorphism için temel bilgi gösterimi
+    def kitap_bilgisi(self):
+        return f"Kitap: {self._ad},\n Yazarı: {self._yazar}, \n Fiyatı: {self._fiyat}"
+
 
