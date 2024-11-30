@@ -28,3 +28,20 @@ class Kitap:
         return f"Kitap: {self._ad},\n Yazarı: {self._yazar}, \n Fiyatı: {self._fiyat}"
 
 
+class Roman (Kitap):
+    def __init__(self,ad,yazar,fiyat,tur):
+        super().__init__(ad,yazar,fiyat)
+        self.tur=tur
+
+    def kitap_bilgisi(self):
+        return f"Roman: {self.get_ad()}, Tür: {self.tur}, Yazar: {self.get_yazar()}, Fiyat: {self.get_fiyat()} TL"
+
+
+class DersKitabi(Kitap):
+    def __init__(self, ad, yazar, fiyat, konu):
+        super().__init__(ad, yazar, fiyat)
+        self.konu = konu
+    
+    # Polymorphism (Başka bir türde bilgi formatı)
+    def kitap_bilgisi(self):
+        return f"Ders Kitabı: {self.get_ad()}, Konu: {self.konu}, Yazar: {self.get_yazar()}, Fiyat: {self.get_fiyat()} TL"
